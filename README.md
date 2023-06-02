@@ -1,8 +1,6 @@
 # Repository for swe project backend
 
-## Instruction
-
-#### For user
+Instruction
 
 1. Clone the repo
 
