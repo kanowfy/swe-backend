@@ -4,8 +4,6 @@ require("dotenv").config();
 const app = express();
 const connectDB = require("./src/config/mongo");
 
-// add route dependency here
-
 const PORT = process.env.PORT;
 app.use(cors())
 app.use(express.json());
@@ -15,7 +13,13 @@ app.use(
     })
 );
 
-// use router middleware here
+// import routers
+const authRouter = require("./src/routes/auth");
+const authTestRouter = require("./src/routes/authtest");
+
+// use routers
+app.use("/api/user", authRouter);
+app.use("/resource", authTestRouter);
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
