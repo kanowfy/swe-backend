@@ -1,4 +1,5 @@
 # Repository for swe project backend
+
 Instruction
 
 1. Clone the repo
@@ -19,15 +20,16 @@ npm install
 touch .env
 ```
 
-4. Add port number and mongodb URI to .env
+4. Add required environment variables to your .env file
 
 ```shell
 PORT=4000
 MONGO_DB_URI=your_mongo_db_uri
+JWT_SECRET=the_secret
 ```
 
 5. Run the program
 
 ```shell
-npm start
+npm run dev
 ```
