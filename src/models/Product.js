@@ -19,11 +19,6 @@ const productSchema = new mongoose.Schema({
         required: true,
         max: 999999
     },
-    quantity: {
-        type: Number,
-        required: true,
-        min: 1
-    },
     image: {
         type: String,
         required: true

@@ -19,7 +19,7 @@ const productRouter = require("./src/routes/product");
 
 // use routers
 app.use("/api/user", userRouter);
-app.use("/api/products");
+app.use("/api/products", productRouter);
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)

@@ -47,6 +47,6 @@ router.post('/login', async (req, res) => {
 });
 
 router.route("/").get(getAllUsers);
-router.route("/:id").get(getUserById).update(updateUser).delete(deleteUser);
+router.route("/:id").get(getUserById).put(updateUser).delete(deleteUser);
 
 module.exports = router
