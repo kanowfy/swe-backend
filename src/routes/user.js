@@ -3,6 +3,7 @@ const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { registerValidation, loginValidation } = require("../utils/validation");
+const { getAllUsers, getUserById, deleteUser, updateUser } = require('../controllers/user');
 
 router.post('/register', async (req, res) => {
     const { error } = registerValidation(req.body);
@@ -43,6 +44,9 @@ router.post('/login', async (req, res) => {
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "7d" });
     res.header('TOKEN', token).send(token);
-})
+});
+
+router.route("/").get(getAllUsers);
+router.route("/:id").get(getUserById).update(updateUser).delete(deleteUser);
 
 module.exports = router
