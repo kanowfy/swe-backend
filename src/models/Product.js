@@ -1,4 +1,5 @@
 const { mongoose } = require("mongoose");
+const Variation = require("./Variation");
 
 const productSchema = new mongoose.Schema({
     name: {
@@ -14,11 +15,12 @@ const productSchema = new mongoose.Schema({
     description: {
         type: String,
     },
-    price: {
+    basePrice: {
         type: Number,
         required: true,
         max: 999999
     },
+    variations: [Variation.schema],
     image: {
         type: String,
         required: true
