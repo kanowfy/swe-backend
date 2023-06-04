@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>
+    Library
+    
+    
+    </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+  
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.4/css/fixedHeader.bootstrap4.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.2/css/responsive.bootstrap4.min.css"/>
+      
+   
+
+     <link rel="stylesheet" href = "css/style.css">
+    
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  </head>
+
+
+
+
+   <body>
+   
+                 <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+  <div class="container-fluid">
+    <a class="d-flex align-items-center" href="#">
+      <img src="./images/hust.png" alt="hust-img" width="30" height="30" class="d-inline-block align-text-top me-2">
+        <h5 class="mb-0 ml-1 text-warning">TA QUANG BUU LIBRARY</h5>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="LogIn.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="ListBook.html">Search Book</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="AddBook.html">Add Book</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="EditBook.html">Update Book</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">Issue Book</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">AboutUs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+		
+		
+		
+		
+    <div class='container-fluid my-container bg-light mt-5 pt-4 pb-5 rounded'>
+        <div>
+            <h2>Add a new book</h2>
+            <hr/>
+            <form id='addBook-form' class='mt-4 needs-validation' method='post' action='controllers/Add_Book.php' novalidate>
+                <div class='form-group row'>
+                    <label for='bookName' class='col-md-2 offset-md-2'>Book Name:</label>
+                    <input class='form-control col-md-4 ml-1' type='text' id='bookName' name='bookName' required>
+                </div>
+                <div class='form-group row'>
+                    <label for='authorName' class='col-md-2 offset-md-2'>Author Name:</label>
+                    <input class='form-control col-md-4 ml-1' type='text' id='authorName' name='authorName' required>
+                </div>
+                <div class='form-group row'>
+                    <label for='genreName' class='col-md-2 offset-md-2'>Genre:</label>
+                    <input class='form-control col-md-4 ml-1' type='text' id='genreName' name='genreName' required>
+                </div>
+				<div class='form-group row'>
+                    <label for='publisherName' class='col-md-2 offset-md-2'>Publisher:</label>
+                    <input class='form-control col-md-4 ml-1' type='text' id='publisherName' name='publisherName' required>
+                </div>
+				<div class='form-group row'>
+                    <label for='ISBN' class='col-md-2 offset-md-2'>ISBN:</label>
+                    <input class='form-control col-md-4 ml-1' type='text' id='ISBN' name='ISBN' required>
+                </div>
+				
+               
+             
+                <div class='form-group row'>
+                    <label for='total_copies' class='col-md-2 offset-md-2'>Total No. of Copies:</label>
+                    <input class='form-control col-md-2 ml-1' type='number' id='total_copies' name='total_copies' min='1' value='1' required>
+                </div>                           
+                <div class='col-md-4 offset-md-4'>
+                    <div class='d-flex justify-content-between'>
+                        <button type='submit' class='btn btn-primary'>Add New Book</button>
+                        <button type='button' onclick='location.href="book-listing.php";' class='btn btn-danger'>Go Back</button>
+                    </div>
+                </div>
+            
+            </form>
+        </div>
+    
+    
+    </div>
+
+<footer id="footer" class="bg-dark text-white py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-3">
+        <img id="hust-png" src="./images/hust.png" alt="hust-img" style="width: 100px;">
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="title">TA QUANG BUU LIBRARY</div>
+        <div class="title">HANOI UNIVERSITY OF SCIENCE AND TECHNOLOGY</div>
+        <div class="subtitle">Address: No1, Dai Co Viet, Ha Ba Trung, Ha Noi</div>
+        <div class="subtitle">Phone number: (84-24) 3869 2243</div>
+      </div>
+      <div class="col-12 col-md-3">
+        <div class="title">SOCIAL NETWORK</div>
+        <div class="row">
+          <div class="col-6">
+            <a href="https://www.facebook.com" target="_blank">
+              <img src="https://1000logos.net/wp-content/uploads/2021/04/Facebook-logo.png" class="img-fluid" style="width:50%;" />
+            </a>
+          </div>
+          <div class="col-6">
+            <a href="https://www.facebook.com" target="_blank">
+              <img src="https://1000logos.net/wp-content/uploads/2021/04/Facebook-logo.png" class="img-fluid" style="width:50%;" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+ 
+
+          
+  </body>
+</html>
