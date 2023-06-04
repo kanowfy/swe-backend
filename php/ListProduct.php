@@ -74,31 +74,28 @@ $(document).ready(function(){
 
  <body>
       
-                 <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+                     <nav class="navbar navbar-expand-lg navbar-light bg-danger">
   <div class="container-fluid">
-    <a class="d-flex align-items-center" href="#">
-      <img src="./images/hust.png" alt="hust-img" width="30" height="30" class="d-inline-block align-text-top me-2">
-        <h5 class="mb-0 ml-1 text-warning">TA QUANG BUU LIBRARY</h5>
-    </a>
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white" href="LogIn.html">Home</a>
+          <a class="nav-link text-white" href="ListProduct.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="ListBook.html">Search Book</a>
+          <a class="nav-link text-white" href="ListProduct.php">Search Product</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="AddBook.html">Add Book</a>
+          <a class="nav-link text-white" href="AddProduct.php">Add Product</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="EditBook.html">Update Book</a>
+          <a class="nav-link text-white" href="EditBook.html">Update Product</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Issue Book</a>
+          <a class="nav-link text-white" href="#">Order ?</a>
         </li>
       
         <li class="nav-item">
