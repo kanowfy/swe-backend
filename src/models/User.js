@@ -18,16 +18,16 @@ const userSchema = new mongoose.Schema({
         minLength: 10,
         maxLength: 11
     },
+    isAdmin: {
+        type: Boolean,
+        default: false
+    },
     level: {
         type: String,
         enum: ['bronze', 'silver', 'gold', 'diamond'],
         default: 'bronze'
-    },
-    dateCreated: {
-        type: Date,
-        default: Date.now
     }
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model('User', userSchema);
 

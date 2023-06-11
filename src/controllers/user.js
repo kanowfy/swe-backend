@@ -30,7 +30,7 @@ exports.updateUser = async (req, res) => {
 exports.deleteUser = async (req, res) => {
     try {
         const user = await userService.deleteUser(req.params.id);
-        res.json({ data: user, status: "success" });
+        res.json({ status: "success" });
     } catch (err) {
         res.status(500).json({ error: err.message });
     }

@@ -24,11 +24,7 @@ const productSchema = new mongoose.Schema({
     image: {
         type: String,
         required: true
-    },
-    dateCreated: {
-        type: Date,
-        default: Date.now
     }
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model('Product', productSchema)
