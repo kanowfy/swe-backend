@@ -6,6 +6,7 @@ const variationSchema = new mongoose.Schema({
         required: true,
         enum: ["S", "M", "L"]
     },
+    
     price: {
         type: Number,
         required: true,

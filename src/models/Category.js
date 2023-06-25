@@ -1,15 +1,9 @@
 const { mongoose } = require("mongoose");
 
 const categorySchema = new mongoose.Schema({
-    size: {
+    title: {
         type: String,
         required: true,
-        enum: ["S", "M", "L"]
-    },
-    price: {
-        type: Number,
-        required: true,
-        max: 999999
     }
 });
 

@@ -1,44 +1,73 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const orderSchema = new mongoose.Schema({
-  user: {
+  customerId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
+    ref: "User",
+    required: true,
   },
-  products: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Product',
-    required: true
-  }],
-  total: {
+  orderLine: [
+    {
+      products: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Product",
+      },
+      toppingList: [
+        {
+          toppingId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Topping",
+          },
+        },
+      ],
+      sizeProduct: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Variation",
+      },
+      quantityProduct: {
+        type: Number,
+        default: 1,
+      },
+      subTotal: {
+        type: Number,
+      },
+    },
+  ],
+  discount: {
     type: Number,
-    required: true
+    default: 0,
   },
   status: {
     type: String,
-    enum: ['pending', 'completed', 'cancelled'],
-    default: 'pending'
+    enum: ["pending", "completed", "successed", "cancelled"],
+    default: "pending",
   },
-  shippingMethod: {
+  // shippingMethod: {
+  //   type: String,
+  //   enum: ["shipper", "store"],
+  //   default: "store",
+  // },
+  // shippingAddress: {
+  //   type: String,
+  //   required: true,
+  // },
+  note: {
     type: String,
-    enum: ['shipper', 'store'],
-    default: 'store'
-  },
-  shippingAddress: {
-    type: String,
-    required: true
   },
   delivery: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Delivery'
+    ref: "Delivery",
   },
   createdAt: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
+  total: {
+    type: Number,
+    required: true,
+  },
 });
 
-const Order = mongoose.model('Order', orderSchema);
+const Order = mongoose.model("Order", orderSchema);
 
 module.exports = Order;

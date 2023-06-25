@@ -2,33 +2,47 @@ const { mongoose } = require("mongoose");
 const Variation = require("./Variation");
 
 const productSchema = new mongoose.Schema({
-    name: {
+  name: {
+    type: String,
+    required: true,
+    minLength: 5,
+  },
+  description: {
+    type: String,
+  },
+  basePrice: {
+    type: Number,
+    required: true,
+    max: 999999,
+  },
+  discount: {
+    type: Number,
+    default: 0,
+  },
+  category: [
+    {
+      title: {
         type: String,
         required: true,
-        minLength: 5,
+      },
     },
-    category: {
+  ],
+  variations: [Variation.schema],
+  toppingList: [
+    {
+      toppingId: {
         type: String,
-        required: true,
-        enum: ['popular','ice-cream & tea', 'smoothies', 'ice-cream', 'fruit tea','cheese tea & pure tea']
+      },
     },
-    description: {
-        type: String,
-    },
-    basePrice: {
-        type: Number,
-        required: true,
-        max: 999999
-    },
-    variations: [Variation.schema],
-    image: {
-        type: String,
-        required: true
-    },
-    dateCreated: {
-        type: Date,
-        default: Date.now
-    }
+  ],
+  image: {
+    type: String,
+    required: true,
+  },
+  dateCreated: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-module.exports = mongoose.model('Product', productSchema)
+module.exports = mongoose.model("Product", productSchema);

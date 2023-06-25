@@ -16,10 +16,17 @@ app.use(
 // import routers
 const userRouter = require("./src/routes/user");
 const productRouter = require("./src/routes/product");
+const toppingRouter = require("./src/routes/topping");
+const categoryRouter = require("./src/routes/category");
+const orderRouter = require("./src/routes/order");
 
 // use routers
 app.use("/api/user", userRouter);
 app.use("/api/products", productRouter);
+app.use("/api/topping", toppingRouter);
+app.use("/api/category", categoryRouter);
+app.use("/api/order", orderRouter);
+
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
