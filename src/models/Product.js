@@ -10,7 +10,7 @@ const productSchema = new mongoose.Schema({
     category: {
         type: String,
         required: true,
-        enum: ['ice-cream', 'beverage']
+        enum: ['popular','ice-cream & tea', 'smoothies', 'ice-cream', 'fruit tea','cheese tea & pure tea']
     },
     description: {
         type: String,
