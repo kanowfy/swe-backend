@@ -1,10 +1,9 @@
 const { mongoose } = require("mongoose");
 
-const variationSchema = new mongoose.Schema({
+const sizeSchema = new mongoose.Schema({
     size: {
         type: String,
         required: true,
-        enum: ["S", "M", "L"]
     },
     
     price: {
@@ -14,4 +13,4 @@ const variationSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model("Variation", variationSchema);
+module.exports = mongoose.model("Size", sizeSchema);

@@ -5,7 +5,7 @@ const {
     getToppingById,
     updateTopping,
     deleteTopping,
-} = require("../controllers/topping");
+} = require("../../controllers/variation/topping");
 
 const router = express.Router();
 

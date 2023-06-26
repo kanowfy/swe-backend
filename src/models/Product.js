@@ -1,5 +1,7 @@
 const { mongoose } = require("mongoose");
-const Variation = require("./Variation");
+// const Variation = require("./variation/Size");
+const Category = require("./variation/Category");
+const Topping = require("./variation/Topping");
 
 const productSchema = new mongoose.Schema({
   name: {
@@ -22,16 +24,25 @@ const productSchema = new mongoose.Schema({
   category: [
     {
       title: {
-        type: String,
-        required: true,
+        type: mongoose.Schema.Types.String,
+        ref: "Category",
       },
     },
   ],
-  variations: [Variation.schema],
+  // variations: [Variation.schema],
+  sizeList: [
+    {
+      sizeId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Size",
+      },
+    },
+  ],
   toppingList: [
     {
       toppingId: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Topping",
       },
     },
   ],

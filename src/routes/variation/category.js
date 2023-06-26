@@ -5,7 +5,7 @@ const {
     getCategoryById,
     updateCategory,
     deleteCategory,
-} = require("../controllers/category");
+} = require("../../controllers/variation/category");
 
 const router = express.Router();
 

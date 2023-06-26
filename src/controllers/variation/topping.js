@@ -1,4 +1,4 @@
-const toppingService = require("../services/topping");
+const toppingService = require("../../services/variation/topping");
 
 exports.getAllToppings = async (req, res) => {
     try {

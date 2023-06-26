@@ -22,7 +22,7 @@ const orderSchema = new mongoose.Schema({
       ],
       sizeProduct: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Variation",
+        ref: "Size",
       },
       quantityProduct: {
         type: Number,

@@ -1,4 +1,4 @@
-const CategoryModel = require("../models/Category");
+const CategoryModel = require("../../models/variation/Category");
 
 exports.getAllCategories = async () => {
     return await CategoryModel.find({});

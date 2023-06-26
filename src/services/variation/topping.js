@@ -1,4 +1,4 @@
-const ToppingModel = require("../models/Topping");
+const ToppingModel = require("../../models/variation/Topping");
 
 exports.getAllToppings = async () => {
     return await ToppingModel.find({});

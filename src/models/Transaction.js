@@ -1,22 +1,18 @@
 const mongoose = require('mongoose');
 
 const transactionSchema = new mongoose.Schema({
-  order: {
+  orderId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Order',
     required: true
   },
   paymentMethod: {
     type: String,
-    required: true
-  },
-  transactionId: {
-    type: String,
-    required: true
+    required: true,
+    enum:['cash','creditcard']
   },
   amount: {
     type: Number,
-    required: true
   },
   status: {
     type: String,
