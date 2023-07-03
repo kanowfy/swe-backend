@@ -12,7 +12,7 @@ exports.getAllProducts = async (req, res) => {
 exports.addProduct = async (req, res) => {
     try {
         const product = await productService.addProduct(req.body);
-        res.json({ data: product, status: "success" });
+        res.json({ _id: product._id, status: "success" });
     } catch (err) {
         res.status(500).json({ error: err.message });
     }

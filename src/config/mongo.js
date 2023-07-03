@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+mongoose.set('strictQuery', false);
 mongoose.connection.on("connected", () => {
     console.log("connected to database");
 });

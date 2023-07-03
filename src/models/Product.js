@@ -1,34 +1,59 @@
 const { mongoose } = require("mongoose");
-const Variation = require("./Variation");
+// const Variation = require("./variation/Size");
+const Category = require("./variation/Category");
+const Topping = require("./variation/Topping");
 
 const productSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-        minLength: 5,
+  name: {
+    type: String,
+    required: true,
+    minLength: 5,
+  },
+  description: {
+    type: String,
+  },
+  basePrice: {
+    type: Number,
+    required: true,
+    max: 999999,
+  },
+  discount: {
+    type: Number,
+    default: 0,
+  },
+  category: [
+    {
+      title: {
+        type: mongoose.Schema.Types.String,
+        ref: "Category",
+      },
     },
-    category: {
-        type: String,
-        required: true,
-        enum: ['ice-cream', 'beverage']
+  ],
+  // variations: [Variation.schema],
+  sizeList: [
+    {
+      sizeId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Size",
+      },
     },
-    description: {
-        type: String,
+  ],
+  toppingList: [
+    {
+      toppingId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Topping",
+      },
     },
-    basePrice: {
-        type: Number,
-        required: true,
-        max: 999999
-    },
-    variations: [Variation.schema],
-    image: {
-        type: String,
-        required: true
-    },
-    dateCreated: {
-        type: Date,
-        default: Date.now
-    }
+  ],
+  image: {
+    type: String,
+    required: true,
+  },
+  dateCreated: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-module.exports = mongoose.model('Product', productSchema)
+module.exports = mongoose.model("Product", productSchema);
